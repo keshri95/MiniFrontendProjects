@@ -12,12 +12,10 @@ function play(playerChoice) {
     const choices = ['rock', 'paper', 'scissors'];
     const computerChoice = choices[Math.floor(Math.random() * 3)];
 
-    // Highlight selections
     document.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
     document.getElementById(playerChoice).classList.add('selected');
     document.getElementById(computerChoice).classList.add('selected');
 
-    // Determine winner
     let result = '';
     if (playerChoice === computerChoice) {
         result = "It's a Draw!";
@@ -36,18 +34,14 @@ function play(playerChoice) {
         loseSound.play();
     }
 
-    // Update scoreboard
     document.getElementById('player-score').textContent = playerScore;
     document.getElementById('computer-score').textContent = computerScore;
 
-    // Update result
     document.getElementById('result').textContent = `You chose ${playerChoice}, Computer chose ${computerChoice}. ${result}`;
 
-    // Update history
     history.push(`Round ${history.length + 1}: You chose ${playerChoice}, Computer chose ${computerChoice}. ${result}`);
     updateHistory();
 
-    // Remove highlight after animation
     setTimeout(() => {
         document.querySelectorAll('.choice').forEach(c => c.classList.remove('selected'));
     }, 1000);
