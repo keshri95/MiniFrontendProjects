@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Popup Modal Box</title>
+</head>
+<body>
+    
+<main>
+        <div>
+            <button class="open_modal" data-modal-id="loginModal">Open Login Modal</button>
+        </div>
+
+        <div class="modal" id="loginModal">
+            <div class="modal_container">
+                <div class="modal_actions">
+                    <button class="close_modal" aria-label="Close modal">×</button>
+                </div>
+                <div class="modal_content_box">
+                    <h2>Login</h2>
+                    <form>
+                        <div class="form_group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="test@test.com" required>
+                        </div>
+                        <div class="form_group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter password" required>
+                        </div>
+                        <button type="submit" class="submit_btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+
+
+    <script src="/app.js"></script>
+</body>
+</html>

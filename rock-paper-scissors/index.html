@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock_Paper_Scissors Game</title>
+    
+</head>
+<body>
+    <div class="game-container">
+        <h1>Rock-Paper-Scissors</h1>
+        <div class="scoreboard">
+            <span>Player: <span id="player-score">0</span></span>
+            <span>Computer: <span id="computer-score">0</span></span>
+        </div>
+        <div class="choices">
+            <div class="choice" id="rock" onclick="play('rock')">
+                <img src="https://img.icons8.com/?size=100&id=37409&format=png&color=000000" alt="Rock">
+            </div>
+            <div class="choice" id="paper" onclick="play('paper')">
+                <img src="https://img.icons8.com/?size=100&id=26243&format=png&color=000000" alt="Paper">
+            </div>
+            <div class="choice" id="scissors" onclick="play('scissors')">
+                <img src="https://img.icons8.com/?size=100&id=37828&format=png&color=000000" alt="Scissors">
+            </div>
+        </div>
+        <div class="result" id="result"></div>
+        <button class="reset-button" onclick="resetGame()">Reset Game</button>
+        <div class="history" id="history"></div>
+    </div>
+    <audio id="click-sound" src="https://www.soundjay.com/buttons/button-09a.mp3"></audio>
+    <audio id="win-sound" src="https://www.soundjay.com/human/sounds/applause-2.mp3"></audio>
+    <audio id="lose-sound" src="https://www.soundjay.com/buttons/sounds/button-2.mp3"></audio>
+    <audio id="draw-sound" src="https://www.soundjay.com/buttons/sounds/beep-05.mp3"></audio>
+
+ <script src="/app.js"></script>
+</body>
+</html>

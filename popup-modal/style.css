@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.open_modal {
+    background-color: #007BFF;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    margin: 10px;
+}
+
+.open_modal:hover {
+    background-color: #0069d9;
+    transform: translateY(-1px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.modal.active {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal_container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.modal.active .modal_container {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal_actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close_modal {
+    background-color: rgb(230, 230, 235);
+    /* color: #555; */
+    font-size: 24px;
+    border: none;
+    color: #e2665e;
+
+}
+
+.close_modal:hover {
+    color: #e02f23;
+    transform: scale(1.2);
+}
+
+.modal_content_box {
+    text-align: left;
+}
+
+.modal_content_box h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-decoration: underline;
+}
+
+.form_group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color:  #272727;
+}
+
+.submit_btn {
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+    font-weight: bold;
+}
+
+.submit_btn:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 600px) {
+    .modal_container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
